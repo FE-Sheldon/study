@@ -10,9 +10,9 @@
         <div class="config-message-box">
           <div class="left">
             <div class="title">服务器配置:</div>
-            <div class="text-3 text">CPU型号： Intel XeonE3</div>
-            <div class="text-4 text">内存：  16G以上</div>
-            <div class="text-5 text">硬盘：  1T</div>
+            <div class="text-3 text"><img src="../assets/images/success-icon.png" width="16" height="13" alt="" srcset="">CPU型号： Intel XeonE3</div>
+            <div class="text-4 text"><img src="../assets/images/success-icon.png" width="16" height="13" alt="" srcset="">内存：  16G以上</div>
+            <div class="text-5 text"><img src="../assets/images/success-icon.png" width="16" height="13" alt="" srcset="">硬盘：  1T</div>
           </div>
           <div class="right">
             <div class="title">操作系统:</div>
@@ -93,6 +93,9 @@ export default {
           font-family: Microsoft YaHei;
           font-weight: 400;
           color: #000000;
+          img{
+            margin-right: 9.8px;
+          }
         }
         .right{
           margin-left: 47px;

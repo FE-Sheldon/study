@@ -89,6 +89,144 @@
         </div>
       </div>
       <!-- 解决方案end -->
+
+      <!-- 产品 -->
+      <div class="product-div">
+        <div class="product-div-warp">
+          <div class="product-div-warp__box">
+            <div class="product-div-warp__box__left">
+              <div class="item" :class="menuIndex === 1 ? 'active':''" @click="handleMenuClick({index:1,text:'金融行业'})">金融行业</div>
+              <div class="item" :class="menuIndex === 2 ? 'active':''" @click="handleMenuClick({index:2,text:'地产行业'})">地产行业</div>
+              <div class="item" :class="menuIndex === 3 ? 'active':''" @click="handleMenuClick({index:3,text:'事业单位'})">事业单位</div>
+              <div class="item" :class="menuIndex === 4 ? 'active':''" @click="handleMenuClick({index:4,text:'科技单位'})">科技单位</div>
+              <div class="item" :class="menuIndex === 5 ? 'active':''" @click="handleMenuClick({index:5,text:'交通行业'})">交通行业</div>
+              <div class="item" :class="menuIndex === 6 ? 'active':''" @click="handleMenuClick({index:6,text:'国企单位'})">国企单位</div>
+            </div>
+            <div class="product-div-warp__box__right">
+              <div class="top">
+                <div class="title-1">智能印章产品行业解决方案</div>
+                <div class="title-2">思格特SIGNET针对行业特征及细分业务场景深度定制，打造一站式解决方案</div>
+              </div>
+              <div class="center">
+                <div class="center-text-1">{{activeText}}</div>
+                <div class="center-text-2">为银行、保险、证券、互联网金融等客户提供安全合规、稳定的智能印章设备及可靠的整体解决方案。</div>
+                <div class="center-btn">
+                  <div class="center-btn__item">安全合规</div>
+                  <div class="center-btn__item">物理隔离</div>
+                  <div class="center-btn__item">稳定可靠</div>
+                </div>
+              </div>
+              <div class="bottom">
+                <div class="bottom-text">客户案例</div>
+                <div class="bottom-icon">
+                  <img src="../assets/images/product_icon.png" alt="" srcset="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 产品 end -->
+
+      <!-- 客户案例 -->
+      <div class="customer-case-div">
+        <div class="customer-case-div-warp">
+          <div class="customer-case-div-warp__title">
+            <div class="title-text-1">助力企业智能用印管理案例</div>
+            <div class="title-text-2">思格特SIGNET为您提供安全、稳定、耐用的产品服务，助力企业快速发展</div>
+            <div class="icon-box">
+              <div class="icon-box-item" v-for="(item,index) in customerIconOption">
+                <img :src="item.src" alt="" srcset="" :width="item._width" :height="item._height">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 客户案例 end -->
+
+      <!-- 服务与支持 -->
+      <div class="service-support-div">
+        <div class="service-support-div-warp">
+          <div class="service-support-div-warp__title">
+            <div class="title-text-1">全国专业服务团队</div>
+            <div class="title-text-2">思格特SIGNET为您提供专业即时的售后技术服务</div>
+          </div>
+          <div class="service-support-div-warp__content">
+            <div class="service-support-div-warp__content__item" v-for="item in serviceSupportData">
+              <div class="city-name">{{item.cityName}}</div>
+              <div class="info">
+                <div>{{item.info1}}</div>
+                <div>{{item.info2}}</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 服务与支持 end -->
+
+      <div class="service-support-div-bottom">
+        <div class="service-support-div-bottom-warp">
+          <div class="service-support-div-bottom-warp__box">
+            <div class="service-support-div-bottom-warp__box__item" v-for="item in options2">
+              <div class="img-div">
+                <img :src="item.src" alt="">
+              </div>
+              <div class="text">{{item.text}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 联系我们 -->
+      <div class="contact-we-div">
+        <div class="contact-we-div-top">
+          <div class="contact-we-div-top__text-1">提交申请，免费安装试用30天</div>
+          <div class="contact-we-div-top__btn">现在提交</div>
+        </div>
+
+        <div class="contact-we-div-center">
+          <div class="contact-we-div-center-warp">
+            <div class="contact-we-div-center-warp__box">
+              <div class="contact-we-div-center-warp__box__left">
+                <div>
+                  <img src="../assets/images/contact-we-54.png" alt="" srcset="">
+                </div>
+                <div>
+                  <img src="../assets/images/contact-we-55.png" alt="" srcset="">
+                </div>
+                <div>
+                  <img src="../assets/images/contact-we-56.png" alt="" srcset="">
+                </div>
+              </div>
+              <div class="contact-we-div-center-warp__box__right">
+                <div class="item">
+                  <div class="contact-we-text-1">关于我们</div>
+                  <div class="contact-we-text-2">企业动态</div>
+                  <div class="contact-we-text-2">案例新闻</div>
+                </div>
+                <div class="item">
+                  <div class="contact-we-text-1">产品</div>
+                  <div class="contact-we-text-2">便携智能印章机</div>
+                  <div class="contact-we-text-2">AI智能印控台</div>
+                </div>
+                <div class="item">
+                  <div class="contact-we-text-1">服务与支持</div>
+                  <div class="contact-we-text-2">私有化</div>
+                  <div class="contact-we-text-2">API接口</div>
+                </div><div class="item">
+                  <div class="contact-we-text-1">联系我们</div>
+                  <div class="contact-we-text-2">400-1123-214</div>
+                  <div class="contact-we-text-2">185-1472-3986</div>
+                  <div class="contact-we-text-2">18514723986@139.com</div>
+                  <div class="contact-we-text-2">北京市朝阳区望京SoHo.T2.3.1806</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 联系我们 end -->
   </div>
 </template>
 <script>
@@ -114,6 +252,128 @@ export default {
   },
   data(){
     return {
+      options2:[{
+        src:require('../assets/images/service-support-49.png'),
+        text:'公安部信息系统安全等级保护'
+      },{
+        src:require('../assets/images/service-support-50.png'),
+        text:'公安部产品安全认证'
+      },{
+        src:require('../assets/images/service-support-51.png'),
+        text:'ISO9001质量体系认证'
+      },{
+        src:require('../assets/images/service-support-52.png'),
+        text:'中国诚信供应商'
+      },{
+        src:require('../assets/images/service-support-53.png'),
+        text:'发明专利'
+      }],
+      serviceSupportData:[{
+        cityName:'北京',
+        info1:'北京市朝阳区望京SoHo',
+        info2:'T2.3.1806'
+      },{
+        cityName:'上海',
+        info1:'北京市朝阳区望京SoHo',
+        info2:'T2.3.1806'
+      },{
+        cityName:'上海',
+        info1:'北京市朝阳区望京SoHo',
+        info2:'T2.3.1806'
+      },{
+        cityName:'北京',
+        info1:'北京市朝阳区望京SoHo',
+        info2:'T2.3.1806'
+      },{
+        cityName:'上海',
+        info1:'北京市朝阳区望京SoHo',
+        info2:'T2.3.1806'
+      },{
+        cityName:'上海',
+        info1:'北京市朝阳区望京SoHo',
+        info2:'T2.3.1806'
+      }],
+      customerIconOption:[{
+        src:require(`../assets/images/coustomer-case-25.png`),
+        _width:'114px',
+        _height:'74px'
+      },{
+        src:require(`../assets/images/coustomer-case-26.png`),
+        _width:'103px',
+        _height:'86px'
+      },{
+        src:require(`../assets/images/coustomer-case-27.png`),
+        _width:'133px',
+        _height:'61px'
+      },{
+        src:require(`../assets/images/coustomer-case-28.png`),
+        _width:'123px',
+        _height:'75px'
+      },{
+        src:require(`../assets/images/coustomer-case-29.png`),
+        _width:'97px',
+        _height:'73px'
+      },{
+        src:require(`../assets/images/coustomer-case-30.png`),
+        _width:'124px',
+        _height:'74px'
+      },{
+        src:require(`../assets/images/coustomer-case-31.png`),
+        _width:'134px',
+        _height:'53px'
+      },{
+        src:require(`../assets/images/coustomer-case-32.png`),
+        _width:'131px',
+        _height:'66px'
+      },{
+        src:require(`../assets/images/coustomer-case-33.png`),
+        _width:'115px',
+        _height:'32px'
+      },{
+        src:require(`../assets/images/coustomer-case-34.png`),
+        _width:'87px',
+        _height:'81px'
+      },{
+        src:require(`../assets/images/coustomer-case-35.png`),
+        _width:'131px',
+        _height:'70px'
+      },{
+        src:require(`../assets/images/coustomer-case-36.png`),
+        _width:'135px',
+        _height:'50px'
+      },{
+        src:require(`../assets/images/coustomer-case-37.png`),
+        _width:'134px',
+        _height:'61px'
+      },{
+        src:require(`../assets/images/coustomer-case-38.png`),
+        _width:'95px',
+        _height:'74px'
+      },{
+        src:require(`../assets/images/coustomer-case-39.png`),
+        _width:'122px',
+        _height:'60px'
+      },{
+        src:require(`../assets/images/coustomer-case-40.png`),
+        _width:'135px',
+        _height:'52px'
+      },{
+        src:require(`../assets/images/coustomer-case-41.png`),
+        _width:'122px',
+        _height:'54px'
+      },{
+        src:require(`../assets/images/coustomer-case-42.png`),
+        _width:'115px',
+        _height:'67px'
+      },{
+        src:require(`../assets/images/coustomer-case-43.png`),
+        _width:'109px',
+        _height:'65px'
+      },{
+        src:require(`../assets/images/coustomer-case-44.png`),
+        _width:'128px',
+        _height:'63px'
+      }],
       option1:[{
         icon: require('../assets/images/icon1.png'),
         text1:'不破坏章体',
@@ -140,22 +400,27 @@ export default {
         text2:'内置多种传感器、报警机制',
         text3:'避免各种非法操作',
       }],
+      menuIndex:1,
       activeName:'first',
+      activeText:'金融行业',
       // activeTabObj:{
       //   activeName:'本地私有一体化',
       //   activeImgSrc:'../assets/images/sol1.png'
       // }
     }
   },
+  mounted(){
+    
+  },
   computed:{},
   watch:{},
   methods:{
-    // handleClick({name}, event) {
-    //   console.log(tab, event);
-    //   if(name != this.activeName){
-    //     this.activeTabObj = o[name]
-    //   }
-    // }
+    handleMenuClick({index,text}){
+      if(index !== this.menuIndex){
+        this.menuIndex = index
+        this.activeText = text
+      }
+    },
   },
 }
 </script>
@@ -421,6 +686,271 @@ export default {
         }
       }
     }
+  }
+  .product-div{
+    width: 100%;
+    height: 581px;
+    background: url('../assets/images/product_bg.png');
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    .product-div-warp{
+      width: 1146px;
+      margin: 0 auto;
+      .product-div-warp__box{
+        display: flex;
+        .product-div-warp__box__left{
+          width: 250px;
+          height: 579px;
+          background:rgba($color:  #232323, $alpha: 0.8);
+          padding: 121px 0;
+          box-sizing: border-box;
+          .item{
+            font-size: 16px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color:rgba($color:  #FFFFFF, $alpha: 0.6);
+            text-align: center;
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+          }
+          .item:hover{
+            cursor:pointer
+          }
+          .active{
+            background: #C6272E;
+            color: #FFFFFF;
+          }
+        }
+        .product-div-warp__box__right{
+          margin-left: 79px;
+          .top{
+            text-align: center;
+            .title-1{
+              font-size: 30px;
+              font-family: Microsoft YaHei;
+              font-weight: 400;
+              color: #FFFFFF;
+              margin: 60px 0 23px;
+            }
+            .title-2{
+              font-size: 16px;
+              font-family: Microsoft YaHei;
+              font-weight: 400;
+              color:rgba($color:  #FFFFFF, $alpha: 0.6);
+            }
+          }
+          .center{
+            margin: 73px 0 70.7px;
+            .center-text-1{
+              font-size: 23px;
+              font-family: Microsoft YaHei;
+              font-weight: bold;
+              color: #FFFFFF;
+            }
+            .center-text-2{
+              font-size: 15px;
+              font-family: Microsoft YaHei;
+              font-weight: 400;
+              color: #FFFFFF;
+              margin: 39px 0 24.3px;
+            }
+            .center-btn{
+              display: flex;
+              .center-btn__item{
+                margin-right: 11px;
+                width: 76px;
+                height: 24px;
+                background: #C4181F;
+                border-radius: 4px;
+                text-align: center;
+                line-height: 24px;
+                font-size: 13px;
+                font-family: Microsoft YaHei;
+                font-weight: 300;
+                color: #FFFFFF;
+              }
+            }
+          }
+          .bottom{
+            .bottom-text{
+              font-size: 13px;
+              font-family: Microsoft YaHei;
+              font-weight: 300;
+              color: #FFFFFF;
+            }
+            .bottom-icon{
+              widows: 116px;
+              height: 30px;
+              margin-top: 19px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .customer-case-div{
+    width: 100%;
+    height: 710px;
+    background: #fff;
+    .customer-case-div-warp{
+      width: 1146px;
+      margin: 0 auto;
+      .title-text-1{
+        text-align: center;
+        font-size: 30px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        color: #000000;
+        margin: 51px 0 23px;
+      }
+      .title-text-2{
+        text-align: center;
+        font-size: 16px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        color:rgba($color:  #000000, $alpha: 0.9);
+      }
+    }
+    .icon-box{
+      display: flex;
+      flex-wrap: wrap;
+      width: 1026px;
+      height: 423px;
+      justify-content: space-around;
+      margin: 79.5px auto 0;
+      .icon-box-item{
+        width: 198px;
+        height: 99px;
+        background: #FFFFFF;
+        border: 1px solid #F2F2F2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .service-support-div{
+    width: 100%;
+    height: 468px;
+    background: url('../assets/images/service-support-bg.png');
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    .service-support-div-warp{
+      width: 1146px;
+      height: 100%;
+      margin: auto;
+      .service-support-div-warp__title{
+        overflow: hidden;
+        text-align: center;
+        .title-text-1{
+          font-size: 30px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          color: #000000;
+          margin: 67px 0 21px;
+        }
+        .title-text-2{
+          font-size: 16px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          color: rgba($color:  #000000, $alpha: 0.6);
+        }
+      }
+      .service-support-div-warp__content{
+        display: flex;
+        width: 920px;
+        height: 140px;
+        justify-content: space-around;
+        margin: 88px auto 0;
+        flex-wrap: wrap;
+        .service-support-div-warp__content__item{
+          display: flex;
+          width: 250px;
+          .city-name{
+            width: 56px;
+            height: 25px;
+            background: #DC0009;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-right: 9px;
+          }
+          .info{
+            font-size: 15px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #000000;
+          }
+        }
+      }
+    }
+  }
+  .service-support-div-bottom{
+    width: 100%;
+    height: 140px;
+    background: #FFFFFF;
+    .service-support-div-bottom-warp{
+      width: 1188px;
+      margin: 0 auto;
+      height: 100%;
+      .service-support-div-bottom-warp__box{
+        display: flex;
+        width: 1157px;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+        .service-support-div-bottom-warp__box__item{
+          text-align: center;
+          .text{
+            font-size: 13px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #0D0D0D;
+            margin-top: 14px;
+          }
+        }
+      }
+    }
+  }
+  .contact-we-div{
+    width: 100%;
+    height: 529px;
+    .contact-we-div-top{
+      text-align: center;
+      width: 100%;
+      height: 179px;
+      overflow: hidden;
+      background: rgba($color:  #000000, $alpha: 0.9);
+      .contact-we-div-top__text-1{
+        font-size: 18px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        color: #FEFEFE;
+        margin: 42px 0 29px;
+      }
+      .contact-we-div-top__btn{
+        width: 160px;
+        height: 44px;
+        margin: 0 auto;
+        line-height: 44px;
+        text-align: center;
+        background: #C6272E;
+        border-radius: 4px;
+        font-size: 18px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        color: #FEFEFE;
+      }
+    }
+  }
+  .contact-we-div-center{
+    
   }
 }
 
