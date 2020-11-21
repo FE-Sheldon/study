@@ -23,12 +23,12 @@
               <img src="../assets/images/logo.png" alt="" srcset="">
             </div>
             <div class="text-div">
-              <div class="item">首页</div>
-              <div class="item">解决方案</div>
-              <div class="item">产品</div>
-              <div class="item">客户案例</div>
-              <div class="item">服务与支持</div>
-              <div class="item">联系我们</div>
+              <a class="item">首页</a>
+              <a class="item" href="#solution">解决方案</a>
+              <a class="item" href="#product">产品</a>
+              <a class="item" href="#customerCase">客户案例</a>
+              <a class="item" href="#serviceSupport">服务与支持</a>
+              <a class="item" href="#contactWe">联系我们</a>
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@
       <!-- 不破坏到非法预警end -->
 
       <!-- 解决方案 -->
-      <div class="solution-div">
+      <div class="solution-div" id="solution">
         <div class="solution-div-warp">
           <div class="title-div">
             <div class="text-1">云网边端一体化解决方案  助力企业数字化转型</div>
@@ -79,11 +79,13 @@
           </div>
           <div class="tabs-div-warp">
             <div :class="'tabs-div ' + activeName">
-              <el-tabs v-model="activeName">
-                <el-tab-pane label="本地私有一体化" name="first"><SolutionItem activeName="first"/></el-tab-pane>
-                <el-tab-pane label="公私混托一体化" name="second"><SolutionItem activeName="second"/></el-tab-pane>
-                <el-tab-pane label="云网边端一体化" name="third"><SolutionItem activeName="third"/></el-tab-pane>
-              </el-tabs>
+              <div>
+                <el-tabs v-model="activeName">
+                  <el-tab-pane label="本地私有一体化" name="first"><SolutionItem activeName="first"/></el-tab-pane>
+                  <el-tab-pane label="公私混托一体化" name="second"><SolutionItem activeName="second"/></el-tab-pane>
+                  <el-tab-pane label="云网边端一体化" name="third"><SolutionItem activeName="third"/></el-tab-pane>
+                </el-tabs>
+              </div>
             </div>
           </div>
         </div>
@@ -91,7 +93,7 @@
       <!-- 解决方案end -->
 
       <!-- 产品 -->
-      <div class="product-div">
+      <div class="product-div" id="product">
         <div class="product-div-warp">
           <div class="product-div-warp__box">
             <div class="product-div-warp__box__left">
@@ -129,13 +131,13 @@
       <!-- 产品 end -->
 
       <!-- 客户案例 -->
-      <div class="customer-case-div">
+      <div class="customer-case-div" id="customerCase">
         <div class="customer-case-div-warp">
           <div class="customer-case-div-warp__title">
             <div class="title-text-1">助力企业智能用印管理案例</div>
             <div class="title-text-2">思格特SIGNET为您提供安全、稳定、耐用的产品服务，助力企业快速发展</div>
             <div class="icon-box">
-              <div class="icon-box-item" v-for="(item,index) in customerIconOption">
+              <div class="icon-box-item" v-for="(item,index) in customerIconOption" :key="item.src">
                 <img :src="item.src" alt="" srcset="" :width="item._width" :height="item._height">
               </div>
             </div>
@@ -145,14 +147,14 @@
       <!-- 客户案例 end -->
 
       <!-- 服务与支持 -->
-      <div class="service-support-div">
+      <div class="service-support-div" id="serviceSupport">
         <div class="service-support-div-warp">
           <div class="service-support-div-warp__title">
             <div class="title-text-1">全国专业服务团队</div>
             <div class="title-text-2">思格特SIGNET为您提供专业即时的售后技术服务</div>
           </div>
           <div class="service-support-div-warp__content">
-            <div class="service-support-div-warp__content__item" v-for="item in serviceSupportData">
+            <div class="service-support-div-warp__content__item" v-for="item in serviceSupportData" :key="item.cityName">
               <div class="city-name">{{item.cityName}}</div>
               <div class="info">
                 <div>{{item.info1}}</div>
@@ -168,7 +170,7 @@
       <div class="service-support-div-bottom">
         <div class="service-support-div-bottom-warp">
           <div class="service-support-div-bottom-warp__box">
-            <div class="service-support-div-bottom-warp__box__item" v-for="item in options2">
+            <div class="service-support-div-bottom-warp__box__item" v-for="item in options2" :key="item.src">
               <div class="img-div">
                 <img :src="item.src" alt="">
               </div>
@@ -179,7 +181,7 @@
       </div>
       
       <!-- 联系我们 -->
-      <div class="contact-we-div">
+      <div class="contact-we-div" id="contactWe">
         <div class="contact-we-div-top">
           <div class="contact-we-div-top__text-1">提交申请，免费安装试用30天</div>
           <div class="contact-we-div-top__btn">现在提交</div>
@@ -188,18 +190,29 @@
         <div class="contact-we-div-center">
           <div class="contact-we-div-center-warp">
             <div class="contact-we-div-center-warp__box">
-              <div class="contact-we-div-center-warp__box__left">
+              <!-- <div class="contact-we-div-center-warp__box__left">
                 <div>
                   <img src="../assets/images/contact-we-54.png" alt="" srcset="">
                 </div>
-                <div>
+                <div class="center-icon">
                   <img src="../assets/images/contact-we-55.png" alt="" srcset="">
                 </div>
                 <div>
                   <img src="../assets/images/contact-we-56.png" alt="" srcset="">
                 </div>
-              </div>
-              <div class="contact-we-div-center-warp__box__right">
+              </div> -->
+              <!-- <div class="contact-we-div-center-warp__box__right"> -->
+                <div class="item item-icon">
+                  <div>
+                    <img src="../assets/images/contact-we-54.png" alt="" srcset="">
+                  </div>
+                  <div class="center-icon">
+                    <img src="../assets/images/contact-we-55.png" alt="" srcset="">
+                  </div>
+                  <div>
+                    <img src="../assets/images/contact-we-56.png" alt="" srcset="">
+                  </div>
+                </div>
                 <div class="item">
                   <div class="contact-we-text-1">关于我们</div>
                   <div class="contact-we-text-2">企业动态</div>
@@ -221,9 +234,13 @@
                   <div class="contact-we-text-2">18514723986@139.com</div>
                   <div class="contact-we-text-2">北京市朝阳区望京SoHo.T2.3.1806</div>
                 </div>
-              </div>
+              <!-- </div> -->
             </div>
           </div>
+        </div>
+
+        <div class="contact-we-div-bottom">
+          京ICP备20030702号-1
         </div>
       </div>
       <!-- 联系我们 end -->
@@ -504,6 +521,9 @@ export default {
           width: 681px;
           justify-content: space-around;
           .item{
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
             font-size: 16px;
             font-family: Microsoft YaHei;
             font-weight: 400;
@@ -927,6 +947,9 @@ export default {
       height: 179px;
       overflow: hidden;
       background: rgba($color:  #000000, $alpha: 0.9);
+      background:url('../assets/images/contact-we-bg.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       .contact-we-div-top__text-1{
         font-size: 18px;
         font-family: Microsoft YaHei;
@@ -950,7 +973,67 @@ export default {
     }
   }
   .contact-we-div-center{
-    
+    width: 100%;
+    height: 300px;
+    background: #181818;
+    .contact-we-div-center-warp{
+      width: 1146px;
+      height: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+      .contact-we-div-center-warp__box{
+        display: flex;
+        width: 1125px;
+        margin: 54px auto 0;
+        justify-content: space-around;
+        
+        .item{
+          .contact-we-text-1{
+            font-size: 14px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: rgba($color:#ffffff, $alpha: 0.6);
+            margin-bottom: 34px;
+          }
+          .contact-we-text-2{
+            font-size: 13px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: rgba($color:#ffffff, $alpha: 0.8);
+            margin-bottom: 18px;
+          }
+        }
+        .item-icon{
+          text-align: center;
+        }
+        .center-icon{
+          margin: 2px 0 21px;
+        }
+        // .contact-we-div-center-warp__box__left{
+        //   width: 103px;
+        //   text-align: center;
+        //   .center-icon{
+        //     margin: 2px 0 21px;
+        //   }
+        // }
+        // .contact-we-div-center-warp__box__right{
+        //   margin-left: 117px;
+        //   display: flex;
+        //   width: 802px;
+        // }
+      }
+    }
+  }
+  .contact-we-div-bottom{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #151515;
+    font-size: 13px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba($color:  #FFFFFF, $alpha: 0.8);
   }
 }
 
