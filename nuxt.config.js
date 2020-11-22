@@ -2,7 +2,8 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
   router: {
-    // base: './'
+    mode:'hash',
+    base: process.env.NODE_ENV === 'production' ? './' : ''
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -40,6 +41,9 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    transpile: [/^element-ui/],
+  },
+  generate:{
     transpile: [/^element-ui/],
   }
 }
