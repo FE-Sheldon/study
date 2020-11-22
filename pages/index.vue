@@ -24,11 +24,11 @@
             </div>
             <div class="text-div">
               <a class="item">首页</a>
-              <a class="item" href="#solution">解决方案</a>
-              <a class="item" href="#product">产品</a>
-              <a class="item" href="#customerCase">客户案例</a>
-              <a class="item" href="#serviceSupport">服务与支持</a>
-              <a class="item" href="#contactWe">联系我们</a>
+              <a class="item" @click="handleClickSolution('#solution')">解决方案</a>
+              <a class="item" @click="handleClickSolution('#product')">产品</a>
+              <a class="item" @click="handleClickSolution('#customerCase')">客户案例</a>
+              <a class="item" @click="handleClickSolution('#serviceSupport')">服务与支持</a>
+              <a class="item" @click="handleClickSolution('#contactWe')">联系我们</a>
             </div>
           </div>
         </div>
@@ -261,7 +261,7 @@ let o = {
     activeImgSrc:require('../assets/images/sol3.png')
   }
 }
-import SolutionItem from '../components/solutionItem'
+import SolutionItem from '@/components/solutionItem'
 export default {
   name:'index',
   components:{
@@ -437,6 +437,9 @@ export default {
         this.menuIndex = index
         this.activeText = text
       }
+    },
+    handleClickSolution(id){
+      document.querySelector(id).scrollIntoView(true)
     },
   },
 }
