@@ -1,8 +1,6 @@
 <template>
   <div class="index-page">
     <div class="header-div">
-      <NavHeader />
-
       <!-- banner -->
       <div class="banner-div">
         <div class="banner-div-warp">
@@ -220,8 +218,6 @@
         <div class="contact-we-div-top__text-1">提交申请，免费安装试用30天</div>
         <div class="contact-we-div-top__btn">现在提交</div>
       </div>
-
-      <Footer />
     </div>
     <!-- 联系我们 end -->
   </div>
@@ -242,14 +238,10 @@ let o = {
   },
 };
 import SolutionItem from "@/components/solutionItem";
-import NavHeader from "@/components/Header/index";
-import Footer from "@/components/Footer/index";
 export default {
   name: "index",
   components: {
     SolutionItem,
-    NavHeader,
-    Footer,
   },
   data() {
     return {

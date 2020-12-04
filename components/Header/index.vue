@@ -22,20 +22,7 @@
             <img src="@/assets/images/logo.png" alt="" srcset="" />
           </div>
           <div class="text-div">
-            <a class="item">首页</a>
-            <a class="item" @click="handleClickSolution('#solution')"
-              >解决方案</a
-            >
-            <a class="item" @click="handleClickSolution('#product')">产品</a>
-            <a class="item" @click="handleClickSolution('#customerCase')"
-              >客户案例</a
-            >
-            <a class="item" @click="handleClickSolution('#serviceSupport')"
-              >服务与支持</a
-            >
-            <a class="item" @click="handleClickSolution('#contactWe')"
-              >联系我们</a
-            >
+            <div class="item" v-for="item in navOption" :key="item.name" @click="handleClickNav(item.routeName)" :class="$route.name === item.routeName ? 'active':''">{{item.name}}</div>
           </div>
         </div>
       </div>
@@ -46,9 +33,37 @@
 
 <script>
 export default {
+  name:'Header',
+  data(){
+    return {
+      navOption:[{
+        name:'首页',
+        routeName:'index',
+      },{
+        name:'解决方案',
+        routeName:'solution',
+      },{
+        name:'产品',
+        routeName:'product',
+      },{
+        name:'客户案例',
+        routeName:'customerCase',
+      },{
+        name:'服务与支持',
+        routeName:'serviceSupport',
+      },{
+        name:'联系我们',
+        routeName:'contactWe',
+      }]
+    }
+  },
+  mounted(){
+    console.warn(this.$route)
+  },
   methods: {
-    handleClickSolution(id) {
-      document.querySelector(id).scrollIntoView(true);
+    handleClickNav(name) {
+      this.$router.push({name})
+      // document.querySelector(id).scrollIntoView(true);
     },
   },
 };
@@ -131,6 +146,9 @@ export default {
             font-family: Microsoft YaHei;
             font-weight: 400;
             color: #000;
+          }
+          .active {
+            color: #DE1C24;
           }
         }
       }

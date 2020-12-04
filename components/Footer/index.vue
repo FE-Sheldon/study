@@ -63,6 +63,7 @@ export default {};
 
 <style lang="scss" scoped>
 .footer-components {
+  width: 100%;
   .contact-we-div-center {
     width: 100%;
     height: 300px;
