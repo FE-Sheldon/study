@@ -462,7 +462,7 @@ export default {
   width: 100vw;
   .header-div {
     width: 100%;
-    height: 500px;
+    height: 384px;
     background: url("../assets/images/header-bg.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -954,7 +954,6 @@ export default {
   }
   .contact-we-div {
     width: 100%;
-    height: 529px;
     .contact-we-div-top {
       text-align: center;
       width: 100%;
